@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | Inicio </title>
+</head>
+<body>
+
+{% extends 'base.html' %}
+{% block content %}
+
+<main class="container py-5">
+    <section class="card card-body">
+        <h1 class="display-1 text-center">Task List</h1>
+        <p>La task list (lista de tareas) es una función esencial diseñada para simplificar la gestión de tus
+            actividades diarias. Ya sea que estés planificando proyectos importantes, recordando fechas límite o
+            simplemente manteniendo un seguimiento de tus quehaceres cotidianos, nuestra task list te proporciona la
+            flexibilidad y la claridad que necesitas para mantenerte en el camino hacia tus metas.
+        </p>
+
+        <div class="text-center">
+            <a class="btn btn-warning" href="/signin/">
+                Iniciar Sesion
+            </a>
+            <a class="btn btn-outline-warning" href="/signup/">
+                Crear cuenta nueva
+            </a>
+        </div>
+
+
+    </section>
+</main>
+
+
+{% endblock %}
+
+</body>
+</html>

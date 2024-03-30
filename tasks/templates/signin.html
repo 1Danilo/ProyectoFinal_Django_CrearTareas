@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | Iniciar Sesión</title>
+</head>
+<body>
+
+    {% extends 'base.html' %}
+    {% block content %}
+
+    <main class="container">
+        <div class="row">
+            <section class="col-md-4 offset-md-4 mt-5">
+                <form action="/signin/" method="post" class="card card-body">
+                    {% csrf_token %}
+                    <h1 class="text-center">Iniciar Sesión</h1>
+                    {{error}}
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label for="correo">Correo Electronico:</label>
+                        <input type="email" name="email" id="correo" class="form-control"
+                               placeholder="Escribe tu correo electronico">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="usuario">Usuario:</label>
+                        <input type="text" name="username" id="usuario" class="form-control"
+                               placeholder="Escribe tu nombre de usuario">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" name="password" id="password" class="form-control"
+                               placeholder="Escribe tu contraseña">
+                    </div>
+
+                    <button class="btn btn-warning" type="submit">
+                        Iniciar Sesion
+                    </button>
+
+                </form>
+            </section>
+        </div>
+    </main>
+
+    {% endblock %}
+
+
+
+</body>
+</html>

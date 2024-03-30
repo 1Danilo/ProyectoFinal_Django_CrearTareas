@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tareas</title>
+</head>
+<body>
+
+    {% extends 'base.html' %}
+    {% block content %}
+
+    <main class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 mt-5">
+
+
+                <form action="/tasks/create/" method="POST" class="card card-body">
+                    <h1>Crear Tarea</h1>
+
+                    {{error}}
+                    {% csrf_token %}
+                    {{form}}
+                    <button class="btn btn-outline-warning">
+                        Guardar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+    {% endblock %}
+
+</body>
+</html>

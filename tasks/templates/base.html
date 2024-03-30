@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Django CRUD Application{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-warning">
+    <div class="container">
+        <a class="navbar-brand" href="#">Django App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="/" class="nav-link active">Home</a>
+                </li>
+
+                {% if user.is_authenticated %}
+
+                    <a href="{% url 'EditarPerfil' %}" >Hola {{user.username}}</a>
+                <img src="{{user.avatar_set.first.imagen.url}}" alt="La img no se pudo cargar" width="50px"
+                     height="50px" style="border-radius: 50px">
+
+                <li class="nav-item">
+                    <a href="{% url 'tasks' %}" class="nav-link active">Tareas Pendientes</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'tasks_completed' %}" class="nav-link active">Tareas completadas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/tasks/create" class="nav-link active">Crear Tarea</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/logout" class="nav-link active">Cerrar Sesión</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a href="/signin" class="nav-link active">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/signup" class="nav-link active">Crear Cuenta</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    {% block content %}
+    {% endblock %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

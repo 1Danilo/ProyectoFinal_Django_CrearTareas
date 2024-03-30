@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | Crear cuenta</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-5">
+            <form action="/signup/" method="POST" class="card card-body text-center">
+                <h1 class="text-center">Crear cuenta</h1>
+                {{error}}
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label for="correo">Correo Electronico:</label>
+                    <input type="email" name="email" id="correo" class="form-control"
+                           placeholder="Escribe tu correo electronico">
+                </div>
+
+                <div class="mb-3">
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" name="username" id="usuario" class="form-control"
+                           placeholder="Escribe tu nombre de usuario">
+                </div>
+                <div class="mb-3">
+                    <label for="password1">Contraseña:</label>
+                    <input type="password" name="password1" id="password1" class="form-control"
+                           placeholder="Escribe tu contraseña">
+                </div>
+                <div class="mb-3">
+                    <label for="password2">Confirma tu contraseña:</label>
+                    <input type="password" name="password2" id="password2" class="form-control"
+                           placeholder="Confirme su contraseña">
+                </div>
+                <div class="mb-3">
+                    <label for="imagen">Avatar:</label>
+                    <input type="file" name="imagen" id="imagen" class="form-control">
+                </div>
+
+                <button class="btn btn-primary">
+                    Crear Usuario
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
+</body>
+</html>
