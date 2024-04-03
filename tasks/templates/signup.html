@@ -11,7 +11,7 @@
 <main class="container">
     <div class="row">
         <div class="col-md-4 offset-md-4 mt-5">
-            <form action="/signup/" method="POST" class="card card-body text-center">
+            <form action="/signup/" method="POST" class="card card-body text-center" enctype="multipart/form-data">
                 <h1 class="text-center">Crear cuenta</h1>
                 {{error}}
                 {% csrf_token %}
