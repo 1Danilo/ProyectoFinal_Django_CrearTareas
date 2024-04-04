@@ -1,46 +1,44 @@
-Django App / TASK LIST
+# Django App / TASK LIST
 
-\-----------------------
 
 Esta aplicación web permite a los usuarios crear una cuenta para gestionar su lista de tareas. Los usuarios pueden agregar nuevas tareas, marcarlas como importantes o completadas, editarlas y visualizarlas según su estado (pendientes o completadas).
 
 \------------------------
 
-Pasos para Iniciar el Proyecto
+**Pasos para Iniciar el Proyecto**
 
 \----------------------------
 
-Clonar el Repositorio:
+**1 - Clonar el Repositorio:**
 
 Clona el repositorio desde GitHub: https://github.com/1Danilo/ProyectoFinal\_Django\_CrearTareas.git
 
 \--------------------------
 
-Activar el Entorno Virtual:
+**2 - Activar el Entorno Virtual:**
 
 Abre la consola de Windows PowerShell.
 
 Navega hasta el directorio del proyecto clonado.
 
 Activa el entorno virtual ejecutando el siguiente comando:
-
+```
 .\venv\Scripts\Activate.ps1
-
+```
 \--------------------------
 
-Levantar la Página Web:
+**3 - Levantar la Página Web:**
 
 Utiliza el siguiente comando para ejecutar el servidor Django:
-
+```
 python manage.py runserver
-
+```
 Accede a la página web seleccionando localhost en tu navegador.
 
 \--------------------------
 
-Acceso de Administrador
+## Acceso de Administrador
 
-\--------------------------
 
 Correo Electrónico: admin@gmail.com
 
