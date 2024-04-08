@@ -81,8 +81,13 @@ def editarPerfil(request):
 
 @login_required
 def tasks(request):
+    query = request.GET.get('q')  # Obteniendo el término de búsqueda de la URL
     tasks = Task.objects.filter(user=request.user, fecha_completada__isnull=True)
-    if not tasks:  # Si no hay tareas disponibles
+
+    if query:  # Si hay un término de búsqueda
+        tasks = tasks.filter(titulo__icontains=query)  # Filtrar por título que contenga el término de búsqueda
+
+    if not tasks:
         message = "No hay tareas disponibles."
         return render(request, 'tasks.html', {'message': message})
     else:
@@ -172,3 +177,5 @@ def signin(request):
             login(request, user)
             return redirect('tasks')
 
+def about_me(request):
+    return render(request, 'acerca_de.html')

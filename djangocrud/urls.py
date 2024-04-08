@@ -36,6 +36,7 @@ urlpatterns = [
     path('signin/', views.signin, name='signin'),
     path('edit/', views.editarPerfil, name='EditarPerfil'),
     path('editAvatar/', views.agregar_avatar, name='EditarAvatar'),
+    path('acercade/', views.about_me, name='AcercaDe'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
